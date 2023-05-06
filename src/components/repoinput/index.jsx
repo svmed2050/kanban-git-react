@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import './repoinput.scss'
 
 const RepoInput = () => {
 	const [repoUrl, setRepoUrl] = useState('')
@@ -36,13 +37,16 @@ const RepoInput = () => {
 	}, [issues])
 
 	return (
-		<div>
+		<div className='input-wrapper'>
 			<input
 				value={repoUrl}
 				onChange={(event) => setRepoUrl(event.target.value)}
 				type='text'
+				className='input-style'
 			/>
-			<button onClick={handleRepoLoad}>Load</button>
+			<button className='button' onClick={handleRepoLoad}>
+				Load issues
+			</button>
 		</div>
 	)
 }

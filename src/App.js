@@ -4,10 +4,15 @@ import RepoInput from './components/repoinput'
 
 function App() {
 	return (
-		<div style={{ padding: '50px' }}>
-			<h1 style={{ marginBottom: '20px' }}>Kanban</h1>
-			<RepoInput />
-			<Kanban />
+		<div /* 	style={{ padding: '50px' }}  */ className='app-container'>
+			<div className='main-wrapper'>
+				<h1 style={{ marginBottom: '20px' }}>
+					Kanban
+					<hr />
+				</h1>
+				<RepoInput />
+				<Kanban />
+			</div>
 		</div>
 	)
 }

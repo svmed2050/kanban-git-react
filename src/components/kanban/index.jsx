@@ -35,6 +35,14 @@ const Kanban = () => {
 
 	return (
 		<DragDropContext onDragEnd={onDragEnd}>
+			<div className='kanban__title-container'>
+				{data.map((section) => (
+					<div key={section.id} className='kanban__title-container__title'>
+						{section.title}
+					</div>
+				))}
+			</div>
+
 			<div className='kanban'>
 				{data.map((section) => (
 					<Droppable key={section.id} droppableId={section.id}>
@@ -44,7 +52,6 @@ const Kanban = () => {
 								className='kanban__section'
 								ref={provided.innerRef}
 							>
-								<div className='kanban__section__title'>{section.title}</div>
 								<div className='kanban__section__content'>
 									{section.tasks.map((task, index) => (
 										<Draggable

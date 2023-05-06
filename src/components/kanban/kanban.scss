@@ -1,21 +1,15 @@
 .kanban {
 	display: flex;
-	align-items: flex-start;
+	// align-items: flex-start;
+	justify-content: center;
 
 	&__section {
-		width: 400px;
+		width: 33%;
 		background-color: #b1b1b1;
 		padding: 10px;
-		border-radius: 10px;
 
 		& ~ & {
 			margin-left: 10px;
-		}
-
-		&__title {
-			font-size: 1.2rem;
-			font-weight: 700;
-			margin: 10px 0 20px;
 		}
 
 		&__content {
@@ -23,5 +17,18 @@
 				margin-top: 10px;
 			}
 		}
+	}
+}
+
+.kanban__title-container {
+	display: flex;
+	justify-content: center;
+
+	&__title {
+		width: 33%;
+		font-size: 1.2rem;
+		font-weight: 700;
+		margin: 20px 0 12px;
+		text-align: center;
 	}
 }
