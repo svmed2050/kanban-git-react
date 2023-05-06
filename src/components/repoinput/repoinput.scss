@@ -5,8 +5,7 @@
 	margin-bottom: 20px;
 }
 
-.input-style,
-select {
+.input-style {
 	width: 100%;
 	padding: 12px 20px;
 	margin: 8px 0;
@@ -15,7 +14,12 @@ select {
 	border: 1px solid #ccc;
 	border-radius: 4px;
 	box-sizing: border-box;
-	transition: 0.3s border ease;
+	transition: all 0.5s ease-in-out;
+}
+
+input:focus {
+	outline: none;
+	border: 1px solid #202020;
 }
 
 .button {
