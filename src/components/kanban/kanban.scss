@@ -11,5 +11,17 @@
 		& ~ & {
 			margin-left: 10px;
 		}
+
+		&__title {
+			font-size: 1.2rem;
+			font-weight: 700;
+			margin: 10px 0 20px;
+		}
+
+		&__content {
+			& > * ~ * {
+				margin-top: 10px;
+			}
+		}
 	}
 }

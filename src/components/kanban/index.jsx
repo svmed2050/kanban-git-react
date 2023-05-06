@@ -26,7 +26,25 @@ const Kanban = () => {
 									<div className='kanban__section__title'>{section.title}</div>
 									<div className='kanban__section__content'>
 										{section.tasks.map((task, index) => (
-											<Card>{task.title}</Card>
+											<Draggable
+												key={task.id}
+												draggableId={task.id}
+												index={index}
+											>
+												{(provided, snapshot) => (
+													<div
+														ref={provided.innerRef}
+														{...provided.draggableProps}
+														{...provided.dragHandleProps}
+														style={{
+															...provided.draggableProps.style,
+															opacity: snapshot.isDragging ? '0.5' : '1',
+														}}
+													>
+														<Card>{task.title}</Card>
+													</div>
+												)}
+											</Draggable>
 										))}
 									</div>
 								</div>
