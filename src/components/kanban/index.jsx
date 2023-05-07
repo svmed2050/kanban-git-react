@@ -3,6 +3,7 @@ import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd'
 import mockData from '../../mockData'
 import { useState } from 'react'
 import Card from '../card'
+import { useSelector } from 'react-redux'
 
 const Kanban = () => {
 	const [data, setData] = useState(mockData)

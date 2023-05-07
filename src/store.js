@@ -4,21 +4,25 @@ import {
 	applyMiddleware,
 } from 'redux'
 import thunk from 'redux-thunk'
-import { composeWithDevTools } from 'redux-devtools-extension'
-import { openIssuesReducer } from './reducers/issuesReducer'
+import { composeWithDevTools } from '@redux-devtools/extension'
+import { issuesReducer } from './reducers/issuesReducer'
 
 const reducer = combineReducers({
-	openIssues: openIssuesReducer,
+	issues: issuesReducer,
 })
 
 const initialState = {}
 
 const middleware = [thunk]
 
+const composeEnhancers = composeWithDevTools({
+	// Specify here name, actionsDenylist, actionsCreators and other options
+})
+
 const store = createStore(
 	reducer,
 	initialState,
-	composeWithDevTools(applyMiddleware(...middleware))
+	composeEnhancers(applyMiddleware(...middleware))
 )
 
 export default store
