@@ -5,8 +5,11 @@ import {
 } from 'redux'
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
+import { openIssuesReducer } from './reducers/issuesReducer'
 
-const reducer = combineReducers({})
+const reducer = combineReducers({
+	openIssues: openIssuesReducer,
+})
 
 const initialState = {}
 
