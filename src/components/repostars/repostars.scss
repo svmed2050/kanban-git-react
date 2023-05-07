@@ -1,0 +1,14 @@
+.stars-wrapper {
+	display: flex;
+	gap: 20px;
+	position: relative;
+
+	&__img {
+		position: absolute;
+		top: 2px;
+	}
+
+	&__quantity {
+		padding-left: 23px;
+	}
+}
