@@ -77,6 +77,7 @@ const RepoInput = () => {
 		<>
 			<div className='input-wrapper'>
 				<input
+					placeholder='Enter GitHub repo URL'
 					value={repoUrl}
 					onChange={(event) => setRepoUrl(event.target.value)}
 					type='text'
