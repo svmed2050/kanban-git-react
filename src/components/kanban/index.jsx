@@ -20,6 +20,7 @@ const Kanban = () => {
 		if (!result.destination) return
 		const { source, destination } = result
 
+		console.log(result)
 		if (source.droppableId !== destination.droppableId) {
 			const sourceColIndex = data.findIndex((e) => e.id === source.droppableId)
 			const destinationColIndex = data.findIndex(

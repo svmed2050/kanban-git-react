@@ -10,6 +10,7 @@ function App() {
 					Kanban
 					<hr />
 				</h1>
+				<p>https://github.com/facebook/react</p>
 				<RepoInput />
 				<Kanban />
 			</div>

@@ -1,0 +1,3 @@
+export const STARS_REQUEST = 'STARS_REQUEST'
+export const STARS_SUCCESS = 'STARS_SUCCESS'
+export const STARS_FAIL = 'STARS_FAIL'

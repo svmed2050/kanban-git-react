@@ -6,9 +6,11 @@ import {
 import thunk from 'redux-thunk'
 import { composeWithDevTools } from '@redux-devtools/extension'
 import { issuesReducer } from './reducers/issuesReducer'
+import { starsReducer } from './reducers/starsReducer'
 
 const reducer = combineReducers({
 	issues: issuesReducer,
+	stars: starsReducer,
 })
 
 const initialState = {}
