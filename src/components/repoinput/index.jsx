@@ -42,9 +42,21 @@ const RepoInput = () => {
 				// 	})
 				// )
 				// setIssues({ open: data[0], inProgress: data[1], done: data[2] })
-				const responseStars = await fetch(urlGitStars)
-				const starsNewData = await responseStars.json()
-				setGitStars(starsNewData.stargazers_count)
+
+				const responseOpen = await fetch(urlOpen)
+				const dataOpen = await responseOpen.json()
+				setIssues((prevState) => ({ ...prevState, open: dataOpen }))
+
+				// console.log(dataOpen[0].title)
+				// console.log(dataOpen[0].comments)
+				// console.log(dataOpen[0].number)
+				// console.log(dataOpen[0].created_at)
+				// console.log(dataOpen[0].user.login)
+
+				/* Fetching stars */
+				// const responseStars = await fetch(urlGitStars)
+				// const starsNewData = await responseStars.json()
+				// setGitStars(starsNewData.stargazers_count)
 				setIsLoading(false)
 			} catch (error) {
 				console.log(error)
@@ -53,6 +65,12 @@ const RepoInput = () => {
 		}
 
 		fetchData()
+
+		/* 
+		Some issue title
+		#315 opened 3 days ago
+		Admin | Comments: 3
+		*/
 	}, [newRepoName, newOwner])
 
 	return (
