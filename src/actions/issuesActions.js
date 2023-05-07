@@ -4,6 +4,7 @@ import {
 	ISSUES_REQUEST,
 	ISSUES_SUCCESS,
 } from '../constants/issuesConstants'
+import { dataFilter } from '../utils/dataFilter'
 
 export const issuesAction = (newOwner, newRepoName) => async (dispatch) => {
 	try {
@@ -22,7 +23,7 @@ export const issuesAction = (newOwner, newRepoName) => async (dispatch) => {
 			})
 		)
 
-		dispatch({ type: ISSUES_SUCCESS, payload: data })
+		dispatch({ type: ISSUES_SUCCESS, payload: dataFilter(data) })
 	} catch (error) {
 		dispatch({
 			type: ISSUES_FAIL,

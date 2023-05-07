@@ -25,39 +25,17 @@ const mockData = [
 				created_at: '2023-05-07T05:48:43Z',
 				user: 'devongovett',
 			},
-			// {
-			// 	id: uuidv4(),
-			// 	title: 'Learn Git',
-			// },
-			// {
-			// 	id: uuidv4(),
-			// 	title: 'Learn Python',
-			// },
 		],
 	},
 	{
 		id: uuidv4(),
 		title: ' ✏️ In Progress',
-		tasks: [
-			// {
-			// 	id: uuidv4(),
-			// 	title: 'Learn CSS',
-			// },
-			// {
-			// 	id: uuidv4(),
-			// 	title: 'Learn Golang',
-			// },
-		],
+		tasks: [],
 	},
 	{
 		id: uuidv4(),
 		title: ' ✔️ Done',
-		tasks: [
-			// {
-			// 	id: uuidv4(),
-			// 	title: 'Learn HTML',
-			// },
-		],
+		tasks: [],
 	},
 ]
 
