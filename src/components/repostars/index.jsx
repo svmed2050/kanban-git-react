@@ -6,7 +6,9 @@ const RepoStars = ({ newOwner, newRepoName, gitStars }) => {
 	return (
 		<div className='stars-wrapper'>
 			<p>
-				{newOwner} &gt; {newRepoName}{' '}
+				{newOwner[0].toUpperCase() + newOwner.slice(1, newOwner.length)} &gt;{' '}
+				{newRepoName[0].toUpperCase() +
+					newRepoName.slice(1, newRepoName.length)}{' '}
 			</p>
 			<span>
 				<img
