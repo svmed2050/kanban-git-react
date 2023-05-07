@@ -1,18 +1,22 @@
 import React, { useState, useEffect } from 'react'
+import RepoStars from '../repostars/index'
+
 import './repoinput.scss'
 
 const RepoInput = () => {
 	const [repoUrl, setRepoUrl] = useState('')
 	const [issues, setIssues] = useState({ open: [], inProgress: [], done: [] })
 	const [gitStars, setGitStars] = useState(206957)
+	const [newOwner, setNewOwner] = useState('Facebook')
+	const [newRepoName, setNewRepoName] = useState('React')
 
 	const handleRepoLoad = async () => {
 		if (!repoUrl) return
 		const urlParts = repoUrl.split('/')
 		if (urlParts.length < 4) return
 
-		const newOwner = urlParts[3]
-		const newRepoName = urlParts[4]
+		setNewOwner(urlParts[3])
+		setNewRepoName(urlParts[4])
 		const baseUrl = `https://api.github.com/repos/${newOwner}/${newRepoName}/issues?sort=created&direction=desc&per_page=4`
 
 		const urlOpen = `${baseUrl}&state=open`
@@ -57,6 +61,14 @@ const RepoInput = () => {
 					Load issues
 				</button>
 			</div>
+
+			{newOwner && newRepoName && (
+				<RepoStars
+					newOwner={newOwner}
+					newRepoName={newRepoName}
+					gitStars={gitStars}
+				/>
+			)}
 		</>
 	)
 }
