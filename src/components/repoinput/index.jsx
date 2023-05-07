@@ -8,18 +8,16 @@ import './repoinput.scss'
 
 const RepoInput = () => {
 	const dispatch = useDispatch()
-	const issues = useSelector((state) => state.issues)
-	const { loading, error, todo, inprogress, done } = issues
-	console.log('todo', todo)
-	console.log('inprogress', inprogress)
-	console.log('done', done)
+	// const issues = useSelector((state) => state.issues)
+	// const { loading, error, todo, inprogress, done } = issues
+	// console.log('todo', todo)
+	// console.log('inprogress', inprogress)
+	// console.log('done', done)
 
 	const [repoUrl, setRepoUrl] = useState('')
-	// const [issues, setIssues] = useState({ open: [], inProgress: [], done: [] })
 	const [gitStars, setGitStars] = useState(0)
 	const [newOwner, setNewOwner] = useState('')
 	const [newRepoName, setNewRepoName] = useState('')
-	// const [isLoading, setIsLoading] = useState(false)
 
 	const handleRepoLoad = async () => {
 		if (!repoUrl) return
@@ -104,7 +102,7 @@ const RepoInput = () => {
 				</button>
 			</div>
 
-			{newOwner && newRepoName && !loading && (
+			{newOwner && newRepoName && (
 				<RepoStars
 					newOwner={newOwner}
 					newRepoName={newRepoName}

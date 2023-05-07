@@ -5,12 +5,12 @@ import {
 } from '../constants/issuesConstants'
 
 export const issuesReducer = (
-	state = { todo: [], inprogress: [], done: [] },
+	state = { todo: {}, inprogress: {}, done: {} },
 	action
 ) => {
 	switch (action.type) {
 		case ISSUES_REQUEST:
-			return { loading: true, todo: [], inprogress: [], done: [] }
+			return { loading: true, todo: {}, inprogress: {}, done: {} }
 		case ISSUES_SUCCESS:
 			return {
 				loading: false,

@@ -6,7 +6,7 @@ export function dataFilter(data) {
 			id: uuidv4(),
 			title: ' 📃 ToDo',
 			issues: data[0].map((el) => ({
-				id: el.id,
+				id: el.id.toString(),
 				title: el.title,
 				comments: el.comments,
 				number: el.number,
@@ -18,7 +18,7 @@ export function dataFilter(data) {
 			id: uuidv4(),
 			title: ' ✏️ In Progress',
 			issues: data[1].map((el) => ({
-				id: el.id,
+				id: el.id.toString(),
 				title: el.title,
 				comments: el.comments,
 				number: el.number,
@@ -30,7 +30,7 @@ export function dataFilter(data) {
 			id: uuidv4(),
 			title: ' ✔️ Done',
 			issues: data[2].map((el) => ({
-				id: el.id,
+				id: el.id.toString(),
 				title: el.title,
 				comments: el.comments,
 				number: el.number,

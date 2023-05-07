@@ -16,26 +16,26 @@ const mockData = [
 	{
 		id: uuidv4(),
 		title: ' 📃 ToDo',
-		tasks: [
+		issues: [
 			{
 				id: uuidv4(),
-				title: 'Add support for onScrollEnd event',
+				title: 'Enter GitHub repo URL to fetch the Data',
 				comments: 1,
-				number: 26789,
+				number: 11111,
 				created_at: '2023-05-07T05:48:43Z',
-				user: 'devongovett',
+				user: 'Pavel Sergienko',
 			},
 		],
 	},
 	{
 		id: uuidv4(),
 		title: ' ✏️ In Progress',
-		tasks: [],
+		issues: [],
 	},
 	{
 		id: uuidv4(),
 		title: ' ✔️ Done',
-		tasks: [],
+		issues: [],
 	},
 ]
 
