@@ -5,7 +5,7 @@ import './repostars.scss'
 
 const RepoStars = () => {
 	const { stars, loading } = useSelector((state) => state.stars)
-	const { stars: gitStars, newOwner, newRepoName } = stars
+	const { stars: gitStars, newOwner, newRepoName } = stars || {}
 
 	console.log(stars)
 

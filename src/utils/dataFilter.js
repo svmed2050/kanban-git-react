@@ -36,6 +36,7 @@ export function dataFilter(data) {
 				number: el.number,
 				created_at: el.updated_at,
 				user: el.user.login,
+				closed: true,
 			})),
 		},
 	]
