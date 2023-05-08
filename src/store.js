@@ -21,9 +21,17 @@ const issuesFromStorage = localStorage.getItem('gitIssues')
 	? JSON.parse(localStorage.getItem('gitIssues'))
 	: mockData
 
+const starsFromStorage = localStorage.getItem('gitStars')
+	? JSON.parse(localStorage.getItem('gitStars'))
+	: {}
+
 const initialState = {
 	issues: {
 		data: issuesFromStorage,
+		loading: false,
+	},
+	stars: {
+		stars: starsFromStorage,
 		loading: false,
 	},
 }

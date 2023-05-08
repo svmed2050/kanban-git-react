@@ -13,7 +13,15 @@ export const starsAction = (newOwner, newRepoName) => async (dispatch) => {
 
 		const { data } = await axios.get(urlGitStars)
 
-		dispatch({ type: STARS_SUCCESS, payload: data.stargazers_count })
+		const newData = {
+			newOwner,
+			newRepoName,
+			stars: data.stargazers_count,
+		}
+
+		localStorage.setItem('gitStars', JSON.stringify(newData))
+
+		dispatch({ type: STARS_SUCCESS, payload: newData })
 	} catch (error) {
 		dispatch({
 			type: STARS_FAIL,

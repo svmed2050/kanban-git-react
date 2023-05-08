@@ -44,9 +44,11 @@ const RepoInput = () => {
 				</button>
 			</div>
 
-			{newOwner && newRepoName && (
+			<RepoStars />
+
+			{/* {newOwner && newRepoName && (
 				<RepoStars newOwner={newOwner} newRepoName={newRepoName} />
-			)}
+			)} */}
 		</>
 	)
 }

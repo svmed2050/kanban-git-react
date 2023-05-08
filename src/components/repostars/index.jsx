@@ -3,8 +3,13 @@ import { useSelector } from 'react-redux'
 import star from '../../icons/star-svgrepo-com.svg'
 import './repostars.scss'
 
-const RepoStars = ({ newOwner, newRepoName }) => {
-	const { stars: gitStars, loading } = useSelector((state) => state.stars)
+const RepoStars = () => {
+	const { stars, loading } = useSelector((state) => state.stars)
+	const { stars: gitStars, newOwner, newRepoName } = stars
+
+	console.log(stars)
+
+	if (!newOwner) return
 
 	return (
 		<div className='stars-wrapper'>
