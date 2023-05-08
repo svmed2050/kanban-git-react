@@ -23,7 +23,11 @@ export const issuesAction = (newOwner, newRepoName) => async (dispatch) => {
 			})
 		)
 
-		dispatch({ type: ISSUES_SUCCESS, payload: dataFilter(data) })
+		const filteredData = dataFilter(data)
+
+		localStorage.setItem('gitIssues', JSON.stringify(filteredData))
+
+		dispatch({ type: ISSUES_SUCCESS, payload: filteredData })
 	} catch (error) {
 		dispatch({
 			type: ISSUES_FAIL,

@@ -7,19 +7,26 @@ import thunk from 'redux-thunk'
 import { composeWithDevTools } from '@redux-devtools/extension'
 import { issuesReducer } from './reducers/issuesReducer'
 import { starsReducer } from './reducers/starsReducer'
+import mockData from './mockData.js'
 
 const reducer = combineReducers({
 	issues: issuesReducer,
 	stars: starsReducer,
 })
 
-const initialState = {}
-
 const middleware = [thunk]
+const composeEnhancers = composeWithDevTools({})
 
-const composeEnhancers = composeWithDevTools({
-	// Specify here name, actionsDenylist, actionsCreators and other options
-})
+const issuesFromStorage = localStorage.getItem('gitIssues')
+	? JSON.parse(localStorage.getItem('gitIssues'))
+	: mockData
+
+const initialState = {
+	issues: {
+		data: issuesFromStorage,
+		loading: false,
+	},
+}
 
 const store = createStore(
 	reducer,
