@@ -14,9 +14,22 @@ const RepoStars = () => {
 	return (
 		<div className='stars-wrapper'>
 			<p>
-				{newOwner[0].toUpperCase() + newOwner.slice(1, newOwner.length)} &gt;{' '}
-				{newRepoName[0].toUpperCase() +
-					newRepoName.slice(1, newRepoName.length)}{' '}
+				<a
+					href={`https://github.com/${newOwner}`}
+					target='_blank'
+					rel='noreferrer'
+				>
+					{newOwner[0].toUpperCase() + newOwner.slice(1, newOwner.length)}
+				</a>{' '}
+				&gt;{' '}
+				<a
+					href={`https://github.com/${newOwner}/${newRepoName}`}
+					target='_blank'
+					rel='noreferrer'
+				>
+					{newRepoName[0].toUpperCase() +
+						newRepoName.slice(1, newRepoName.length)}
+				</a>
 			</p>
 			<span>
 				<img
