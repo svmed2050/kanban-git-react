@@ -17,3 +17,14 @@
 		text-decoration: none;
 	}
 }
+
+.zoom {
+	transition: transform 0.1s ease-in-out;
+}
+
+.zoom:hover {
+	display: inline-block;
+	transform: scale(1.02);
+	color: rgb(0, 66, 128);
+	// transform: translateY(0.3px);
+}

@@ -18,6 +18,7 @@ const RepoStars = () => {
 					href={`https://github.com/${newOwner}`}
 					target='_blank'
 					rel='noreferrer'
+					className='zoom'
 				>
 					{newOwner[0].toUpperCase() + newOwner.slice(1, newOwner.length)}
 				</a>{' '}
@@ -26,6 +27,7 @@ const RepoStars = () => {
 					href={`https://github.com/${newOwner}/${newRepoName}`}
 					target='_blank'
 					rel='noreferrer'
+					className='zoom'
 				>
 					{newRepoName[0].toUpperCase() +
 						newRepoName.slice(1, newRepoName.length)}
