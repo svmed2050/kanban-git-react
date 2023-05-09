@@ -5,6 +5,7 @@ import {
 	ISSUES_SUCCESS,
 } from '../constants/issuesConstants'
 import { dataFilter } from '../utils/dataFilter'
+import { saveIssues } from '../utils/saveIssues'
 
 export const issuesAction = (newOwner, newRepoName) => async (dispatch) => {
 	try {
@@ -25,7 +26,7 @@ export const issuesAction = (newOwner, newRepoName) => async (dispatch) => {
 
 		const filteredData = dataFilter(data)
 
-		localStorage.setItem('gitIssues', JSON.stringify(filteredData))
+		saveIssues(newOwner, newRepoName, filteredData)
 
 		dispatch({ type: ISSUES_SUCCESS, payload: filteredData })
 	} catch (error) {

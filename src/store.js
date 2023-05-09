@@ -34,6 +34,36 @@ const initialState = {
 		stars: starsFromStorage,
 		loading: false,
 	},
+
+	/*
+	1. Мы делаем fetch на gitHub API
+	и получаем оттуда данные
+
+	2. Эти данные мы сохраняем по ключу
+	'reposInStorage' в объекте, где название
+	данного свойства это строка 'owner/repo'
+
+	3. Далее, когда мы делаем fetch запрос,
+	то мы должны достать данные из localStorage
+	и проверить есть ли там уже такое свойство.
+	
+	а) если есть, то просто достать данные оттуда
+
+	b) если нет, то сделать новый fetch запрос
+	и сохранить данные в localStorage
+	
+
+
+	reposInStorage: {
+		'facebook/react': {
+
+		}
+		'svmed2050/kanban': {
+
+		}
+	}
+	
+	*/
 }
 
 const store = createStore(

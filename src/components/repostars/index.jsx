@@ -7,7 +7,7 @@ const RepoStars = () => {
 	const { stars, loading } = useSelector((state) => state.stars)
 	const { stars: gitStars, newOwner, newRepoName } = stars || {}
 
-	console.log(stars)
+	// console.log(stars)
 
 	if (!newOwner) return
 

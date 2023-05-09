@@ -28,3 +28,7 @@
 	color: rgb(0, 66, 128);
 	// transform: translateY(0.3px);
 }
+
+.zoom:active {
+	transform: translateY(1px);
+}
