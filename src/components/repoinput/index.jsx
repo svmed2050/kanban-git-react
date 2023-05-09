@@ -24,7 +24,7 @@ const RepoInput = () => {
 
 	useEffect(() => {
 		if (!newRepoName || !newOwner) return
-		console.log('fetching')
+		// console.log('fetching')
 		dispatch(issuesAction(newOwner, newRepoName))
 		dispatch(starsAction(newOwner, newRepoName))
 	}, [dispatch, newOwner, newRepoName])
