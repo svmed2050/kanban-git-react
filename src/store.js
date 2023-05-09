@@ -17,9 +17,15 @@ const reducer = combineReducers({
 const middleware = [thunk]
 const composeEnhancers = composeWithDevTools({})
 
-const issuesFromStorage = localStorage.getItem('gitIssues')
-	? JSON.parse(localStorage.getItem('gitIssues'))
-	: mockData
+let issuesFromStorage
+
+if (localStorage.getItem('reposInStorage')) {
+	const objFromStorage = JSON.parse(localStorage.getItem('reposInStorage'))
+	const lastRepo = objFromStorage.lastRepo
+	issuesFromStorage = objFromStorage.reposData[lastRepo].issues
+} else {
+	issuesFromStorage = mockData
+}
 
 const starsFromStorage = localStorage.getItem('gitStars')
 	? JSON.parse(localStorage.getItem('gitStars'))
@@ -46,7 +52,7 @@ const initialState = {
 	3. Далее, когда мы делаем fetch запрос,
 	то мы должны достать данные из localStorage
 	и проверить есть ли там уже такое свойство.
-	
+
 	а) если есть, то просто достать данные оттуда
 
 	b) если нет, то сделать новый fetch запрос
